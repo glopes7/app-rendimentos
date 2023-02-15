@@ -2,12 +2,26 @@ export function QuoteBox() {
   return (
     <div className="card w-96  bg-base-100 shadow-xl">
       <div className="card-body">
-        <div className="form-control w-full max-w-xs">
+        <div className="flex justify-between items-center  ">
           <input
             type="text"
             placeholder="Ativo"
             className="input input-bordered w-32"
           />
+          <div className="flex flex-col gap-1 ">
+            <input
+              type="text"
+              className=" input input-bordered w-36 h-4 py-4 "
+              disabled
+            />
+            <input
+              type="text"
+              className=" input input-bordered w-36 h-4 py-4 "
+              disabled
+              />
+
+              
+          </div>
         </div>
         <div className="flex justify-between items-center">
           <label>Dividend Yeld</label>

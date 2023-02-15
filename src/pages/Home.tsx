@@ -2,7 +2,7 @@ import { useState } from "react";
 import { QuoteBox } from "../components/QuoteBox";
 
 export default function Home() {
-  const [quotes, setQuote] = useState(0);
+  const [quotes, setQuote] = useState(1);
 
   return (
     <div>
@@ -55,7 +55,6 @@ export default function Home() {
             .fill(0)
             .map(() => (
               <QuoteBox />
-              
             ))}
         </div>
       </div>
