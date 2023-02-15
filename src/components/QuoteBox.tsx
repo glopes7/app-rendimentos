@@ -13,7 +13,7 @@ export function QuoteBox() {
           <label>Dividend Yeld</label>
           <label className="w-auto input-group">
             <input
-              className=" input input-sm input-bordered w-16"
+              className=" input input-sm input-bordered w-20"
               type="number"
             />
             <span className="bg-primary">&nbsp;%</span>
@@ -23,7 +23,7 @@ export function QuoteBox() {
           <label>Ultimo Rendimento</label>
           <label className="w-auto input-group">
             <input
-              className=" input input-sm input-bordered w-16"
+              className=" input input-sm input-bordered w-20"
               type="number"
             />
             <span className="bg-primary">R$</span>
