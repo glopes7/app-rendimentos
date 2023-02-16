@@ -10,7 +10,7 @@ export default function Home() {
 
   const generateQuoteElements = () => {
     const newQuotes = Array<Quote>(numInputs).fill({
-      name: "asdasdsa",
+      name: "",
       lastIncome: 0,
       quoteValue: 0,
     });
