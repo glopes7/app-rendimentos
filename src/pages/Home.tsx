@@ -1,8 +1,51 @@
 import { useState } from "react";
-import { QuoteBox } from "../components/QuoteBox";
+import { Quote, QuoteBox } from "../components/QuoteBox";
 
 export default function Home() {
-  const [quotes, setQuote] = useState(1);
+  const [numInputs, setNumInputs] = useState(0);
+
+  const [contributionAmount, setContributionAmount] = useState(0);
+
+  const [quoteValues, setQuoteValues] = useState<Quote[]>([]);
+
+  const generateQuoteElements = () => {
+    const newQuotes = Array<Quote>(numInputs).fill({
+      name: "asdasdsa",
+      lastIncome: 0,
+      quoteValue: 0,
+    });
+
+    return newQuotes.map((defaultQuote, i) => (
+      <QuoteBox
+        key={i}
+        quote={quoteValues[i] || defaultQuote}
+        division={contributionAmount / numInputs}
+        onNameChange={(newName) => {
+          const oldValue = [...quoteValues];
+          oldValue[i] = { ...defaultQuote, ...oldValue[i], name: newName };
+          setQuoteValues(oldValue);
+        }}
+        onQuoteValueChange={(newValue) => {
+          const oldValue = [...quoteValues];
+          oldValue[i] = {
+            ...defaultQuote,
+            ...oldValue[i],
+            quoteValue: newValue,
+          };
+          setQuoteValues(oldValue);
+        }}
+        onLastIncomeChange={(newValue) => {
+          const oldValue = [...quoteValues];
+          oldValue[i] = {
+            ...defaultQuote,
+            ...oldValue[i],
+            lastIncome: newValue,
+          };
+          setQuoteValues(oldValue);
+        }}
+      />
+    ));
+  };
 
   return (
     <div>
@@ -13,7 +56,11 @@ export default function Home() {
         <form
           onSubmit={(e: any) => {
             e.preventDefault();
-            setQuote(parseInt(e.target.inputQntd.value));
+            setNumInputs(parseInt(e.target.inputQntd.value));
+            setContributionAmount(
+              parseInt(e.target.contributionAmountInput.value)
+            );
+            setQuoteValues([]);
           }}
           className="flex flex-col items-center  gap-y-4"
         >
@@ -27,6 +74,7 @@ export default function Home() {
               type="number"
               placeholder="R$"
               className="input input-bordered w-full max-w-xs"
+              name="contributionAmountInput"
             />
           </div>
           <div className="form-control w-full max-w-xs">
@@ -51,11 +99,7 @@ export default function Home() {
           </button>
         </form>
         <div className="flex flex-wrap gap-5 justify-center">
-          {Array(quotes)
-            .fill(0)
-            .map(() => (
-              <QuoteBox />
-            ))}
+          {generateQuoteElements()}
         </div>
       </div>
     </div>
