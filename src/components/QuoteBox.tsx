@@ -63,16 +63,6 @@ export function QuoteBox({
             <span className="bg-primary">R$</span>
           </label>
         </div>
-        {/* <div className="flex justify-between items-center">
-          <label>Dividend Yeld</label>
-          <label className="w-auto input-group">
-            <input
-              className=" input input-sm input-bordered w-20 "
-              type="number"
-            />
-            <span className="  bg-primary">&nbsp;%</span>
-          </label>
-        </div> */}
         <div className="flex justify-between items-center">
           <label>Ultimo Rendimento</label>
           <label className="w-auto input-group">
