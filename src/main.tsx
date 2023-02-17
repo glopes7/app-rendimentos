@@ -8,14 +8,8 @@ import "/src/index.css";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>
+    element: <Home />,
   },
-  {
-    path: "/test",
-    element: <QuoteBox/>
-  }
-  
-  
 ]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
