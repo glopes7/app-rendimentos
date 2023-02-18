@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { Quote, QuoteBox } from "../components/QuoteBox";
 
 const defaultQuote: Quote = {
-  currentIncome: 0,
+  currentInvoice: 0,
   currentValue: 0,
   gains: 0,
   leftover: 0,

@@ -3,7 +3,7 @@ import { quoteData } from "../utils/quotesData";
 
 export type Quote = {
   currentValue: number;
-  currentIncome: number;
+  currentInvoice: number;
   gains: number;
   leftover: number;
   numQuote: number;
@@ -35,14 +35,14 @@ export function QuoteBox({ quote, available, onQuoteChange }: QuoteBoxProps) {
               const quoteId = value.split("-")[0].trim().toLowerCase();
 
               const result = await fetch(
-                `https://rendimento.duckdns.org/${quoteId}`
+                `https://rendimentos.deno.dev/${quoteId}`
               );
               const data = await result.json();
 
               const numQuote = Number(
                 Math.trunc(available / data.currentValue)
               );
-              const gains = Number(numQuote * data.currentIncome);
+              const gains = Number(numQuote * data.currentInvoice);
               const leftover = Number(
                 Math.abs(numQuote * data.currentValue - available)
               );
@@ -93,9 +93,9 @@ export function QuoteBox({ quote, available, onQuoteChange }: QuoteBoxProps) {
             <input
               className=" input input-sm input-bordered w-20"
               type="number"
-              value={quote.currentIncome}
+              value={quote.currentInvoice}
               onChange={(e) =>
-                onQuoteChange({ currentIncome: parseFloat(e.target.value) })
+                onQuoteChange({ currentInvoice: parseFloat(e.target.value) })
               }
             />
             <span className=" bg-primary">R$</span>
