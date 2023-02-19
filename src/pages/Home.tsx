@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { Quote, QuoteBox } from "../components/QuoteBox";
 
 const defaultQuote: Quote = {
-  currentInvoice: 0,
+  currentIncome: 0,
   currentValue: 0,
   gains: 0,
   leftover: 0,
@@ -77,10 +77,13 @@ export default function Home() {
             </label>
             <input
               type="number"
-              placeholder="R$"
+              placeholder="R$ 999,999.00"
               className="input input-bordered w-full max-w-xs"
               name="contributionAmountInput"
             />
+          </div>
+          <div>
+            <div className="App"></div>
           </div>
           <div className="form-control w-full max-w-xs">
             <label className="label">
@@ -92,7 +95,7 @@ export default function Home() {
               required
               name="inputQntd"
               type="number"
-              placeholder="Nº"
+              placeholder="Nº 10"
               className="input input-bordered w-full max-w-xs"
             />
           </div>

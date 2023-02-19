@@ -3,7 +3,7 @@ import { quoteData } from "../utils/quotesData";
 
 export type Quote = {
   currentValue: number;
-  currentInvoice: number;
+  currentIncome: number;
   gains: number;
   leftover: number;
   numQuote: number;
@@ -35,23 +35,23 @@ export function QuoteBox({ quote, available, onQuoteChange }: QuoteBoxProps) {
               const quoteId = value.split("-")[0].trim().toLowerCase();
 
               const result = await fetch(
-                `https://rendimentos.deno.dev/${quoteId}`
+                `https://rendimento.duckdns.org/${quoteId}`
               );
               const data = await result.json();
 
               const numQuote = Number(
                 Math.trunc(available / data.currentValue)
               );
-              const gains = Number(numQuote * data.currentInvoice);
+              const gains = Number(numQuote * data.currentIncome);
               const leftover = Number(
                 Math.abs(numQuote * data.currentValue - available)
               );
 
               onQuoteChange({ ...data, gains, leftover, numQuote });
             }}
-            defaultValue="Escolha uma ação"
+            defaultValue="Encontre seu FII"
           >
-            <option disabled>Escolha uma ação</option>
+            <option disabled>Encontre seu FII</option>
             {quoteData.map((quote, index) => (
               <option key={index}>{quote}</option>
             ))}
@@ -59,8 +59,8 @@ export function QuoteBox({ quote, available, onQuoteChange }: QuoteBoxProps) {
           <div className="flex flex-col">
             <div className="form-control items-center w-32">
               <label className="label">
-                <span className="label-text font-inter font-extralight">
-                  Quantidade de Cotas
+                <span className="flex text-center label-text font-inter font-extralight">
+                   Quantidade de cotas
                 </span>
               </label>
               <input
@@ -93,9 +93,9 @@ export function QuoteBox({ quote, available, onQuoteChange }: QuoteBoxProps) {
             <input
               className=" input input-sm input-bordered w-20"
               type="number"
-              value={quote.currentInvoice}
+              value={quote.currentIncome}
               onChange={(e) =>
-                onQuoteChange({ currentInvoice: parseFloat(e.target.value) })
+                onQuoteChange({ currentIncome: parseFloat(e.target.value) })
               }
             />
             <span className=" bg-primary">R$</span>
@@ -103,10 +103,10 @@ export function QuoteBox({ quote, available, onQuoteChange }: QuoteBoxProps) {
         </div>
         <div
           className={`${
-            Boolean(quote.gains) ? "" : "invisible"
+            Boolean(quote.gains) ? "1" : "invisible"
           } text-green-500`}
         >
-          Ganhos: R$ {quote.gains.toFixed(2)}
+          Rendimento: R$ {quote.gains.toFixed(2)}
         </div>
       </div>
     </div>
