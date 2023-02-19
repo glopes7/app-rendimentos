@@ -8,7 +8,6 @@ const defaultQuote: Quote = {
   gains: 0,
   leftover: 0,
   numQuote: 0,
-  
 };
 
 export default function Home() {
@@ -35,6 +34,7 @@ export default function Home() {
         ...defaultQuote,
         ...oldValue[index],
         ...newValue,
+        
       };
 
       return oldValue;
@@ -79,7 +79,7 @@ export default function Home() {
             </label>
             <input
               type="number"
-              placeholder="R$ 999,999.00"
+              placeholder="Ex: R$1.000,00"
               className="input input-bordered w-full max-w-xs"
               name="contributionAmountInput"
             />
@@ -97,7 +97,7 @@ export default function Home() {
               required
               name="inputQntd"
               type="number"
-              placeholder="Nº 10"
+              placeholder="Ex: 10"
               className="input input-bordered w-full max-w-xs"
             />
           </div>

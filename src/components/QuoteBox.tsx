@@ -51,8 +51,6 @@ export function QuoteBox({ quote, available, onQuoteChange }: QuoteBoxProps) {
               );
               const data = await result.json();
 
-              const applyValue = Number(Math.abs(available - quote.leftover));
-
               const numQuote = Number(
                 Math.trunc(available / data.currentValue)
               );
@@ -61,6 +59,7 @@ export function QuoteBox({ quote, available, onQuoteChange }: QuoteBoxProps) {
               const leftover = Number(
                 Math.abs(numQuote * data.currentValue - available)
               );
+              const applyValue = Number(Math.abs(available - leftover));
 
               onQuoteChange({ ...data, gains, leftover, numQuote, applyValue });
             }}
