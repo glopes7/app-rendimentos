@@ -7,6 +7,7 @@ export type Quote = {
   gains: number;
   leftover: number;
   numQuote: number;
+  applyValue: number;
 };
 
 type QuoteBoxProps = {
@@ -25,8 +26,19 @@ export function QuoteBox({ quote, available, onQuoteChange }: QuoteBoxProps) {
       }`}
     >
       <div className=" card-body">
-        Disponibilizado: R$ {available.toFixed(2)} <br /> Sobra: R${" "}
-        {quote.leftover.toFixed(2)}
+        <div className="gap-0">
+          <div className="font-inter font-extralight text-green-500">
+            Valor Disponível: R$ {available.toFixed(2)}
+          </div>
+          <div className="font-inter font-extralight text-green-500">
+            {" "}
+            Valor Aplicado: R$ {quote.applyValue.toFixed(2)}{" "}
+          </div>
+          <div className="font-inter font-extralight text-red-500 ">
+            Sobras: R$ {quote.leftover.toFixed(2)}
+          </div>
+        </div>
+
         <div className="flex justify-between items-center gap-x-2">
           <select
             className="select w-44"
@@ -39,15 +51,18 @@ export function QuoteBox({ quote, available, onQuoteChange }: QuoteBoxProps) {
               );
               const data = await result.json();
 
+              const applyValue = Number(Math.abs(available - quote.leftover));
+
               const numQuote = Number(
                 Math.trunc(available / data.currentValue)
               );
               const gains = Number(numQuote * data.currentIncome);
+
               const leftover = Number(
                 Math.abs(numQuote * data.currentValue - available)
               );
 
-              onQuoteChange({ ...data, gains, leftover, numQuote });
+              onQuoteChange({ ...data, gains, leftover, numQuote, applyValue });
             }}
             defaultValue="Encontre seu FII"
           >
@@ -60,7 +75,7 @@ export function QuoteBox({ quote, available, onQuoteChange }: QuoteBoxProps) {
             <div className="form-control items-center w-32">
               <label className="label">
                 <span className="flex text-center label-text font-inter font-extralight">
-                   Quantidade de cotas
+                  Und. de Cotas
                 </span>
               </label>
               <input

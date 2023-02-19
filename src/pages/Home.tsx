@@ -2,11 +2,13 @@ import { useMemo, useState } from "react";
 import { Quote, QuoteBox } from "../components/QuoteBox";
 
 const defaultQuote: Quote = {
+  applyValue: 0,
   currentIncome: 0,
   currentValue: 0,
   gains: 0,
   leftover: 0,
   numQuote: 0,
+  
 };
 
 export default function Home() {
@@ -111,8 +113,9 @@ export default function Home() {
             Boolean(totalGains) ? "" : "invisible"
           }`}
         >
-          Ganhos totais: R$ {totalGains.toFixed(2)} <br />
-          Sobras totais: R$ {totalLeftOver.toFixed(2)}
+          Rendimento Mensal: R$ {totalGains.toFixed(2)} <br />
+          <div className="text-red-500">Sobras Totais: R$ {totalLeftOver.toFixed(2)} </div>
+          
         </div>
         <div className="flex flex-wrap gap-5 justify-center mb-12">
           {generateQuoteElements()}
