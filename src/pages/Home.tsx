@@ -8,7 +8,7 @@ export default function Home() {
     return <Navigate to="/calculator" />;
   }
   return (
-    <div>
+    <div className="absolute left-1/2 -translate-x-1/2 flex  flex-col items-center gap-y-4">
       <div className=" px-2 py-2 items-center bg-gray-200 flex justify-between">
         <button className="border-none text-lg btn bg-green-500">
           Pagina Inicial
