@@ -1,35 +1,9 @@
-import { Navigate, Route, Router } from "react-router-dom";
-import { useState } from "react";
+
+import React from "react"
+
+
 
 export default function Home() {
-  const [goToCalculator, SetGoToCalculator] = useState(false);
-
-  if (goToCalculator) {
-    return <Navigate to="/calculator" />;
-  }
-  return (
-    <div>
-      <div className=" px-2 py-2 items-center bg-gray-200 flex justify-between">
-        <button className="btn-primary border-none text-lg btn bg-green-500">
-          Pagina Inicial
-        </button>
-
-        <div className="flex gap-2  items-center">
-          <button className="btn">Começe Já</button>
-          <div>
-            <button className="btn">login</button>
-          </div>
-        </div>
-      </div>
-      <div className="flex justify-center p-8">
-        <button  className="btn btn-primary"
-          onClick={() => {
-            SetGoToCalculator(true);
-          }}
-        >
-          Calculadora
-        </button>
-      </div>
-    </div>
-  );
+  return
 }
+  
