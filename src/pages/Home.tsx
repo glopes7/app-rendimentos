@@ -8,27 +8,27 @@ export default function Home() {
     return <Navigate to="/calculator" />;
   }
   return (
-    <div className="absolute left-1/2 -translate-x-1/2 flex  flex-col items-center gap-y-4">
+    <div>
       <div className=" px-2 py-2 items-center bg-gray-200 flex justify-between">
-        <button className="border-none text-lg btn bg-green-500">
+        <button className="btn-primary border-none text-lg btn bg-green-500">
           Pagina Inicial
         </button>
-        <div>
-          <button
-            onClick={() => {
-              SetGoToCalculator(true);
-            }}
-            className=" bg-green-500 border-none btn text-center"
-          >
-            Calculadora
-          </button>
-        </div>
+
         <div className="flex gap-2  items-center">
           <button className="btn">Começe Já</button>
           <div>
             <button className="btn">login</button>
           </div>
         </div>
+      </div>
+      <div className="flex justify-center p-8">
+        <button  className="btn btn-primary"
+          onClick={() => {
+            SetGoToCalculator(true);
+          }}
+        >
+          Calculadora
+        </button>
       </div>
     </div>
   );
