@@ -2,6 +2,12 @@ import { Navigate, Route, Router } from "react-router-dom";
 import { useState } from "react";
 
 export default function LandingPage() {
+  const [goToCalculator, setGoToCalculator] = useState(false);
+
+  if (goToCalculator) {
+    return <Navigate to="/calculator" />;
+  }
+
   return (
     <div>
       <div className="navbar border-b border-zinc-300  min-h-0 p-1 ">
@@ -72,7 +78,13 @@ export default function LandingPage() {
               </a>
               <ul className="p-2">
                 <li>
-                  <a>Calculadora Rendimento</a>
+                  <a
+                    onClick={() => {
+                      setGoToCalculator(true);
+                    }}
+                  >
+                    Calculadora Rendimento
+                  </a>
                 </li>
                 <li>
                   <a>Juros Compostos</a>
