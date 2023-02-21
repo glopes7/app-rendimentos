@@ -102,7 +102,7 @@ export default function Calculator() {
           </div>
           <button
             type="submit"
-            className=" btn btn-primary  py-[12px] px-[38px]"
+            className=" btn btn-primary btn-sm btn-outline px-8"
           >
             Enter
           </button>
