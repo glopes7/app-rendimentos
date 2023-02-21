@@ -48,7 +48,13 @@ export default function LandingPage() {
                 </a>
                 <ul className="p-2">
                   <li>
-                    <a>Calculadora Dividendos</a>
+                    <a
+                      onClick={() => {
+                        setGoToCalculator(true);
+                      }}
+                    >
+                      Calculadora Dividendos
+                    </a>
                   </li>
                   <li>
                     <a>Juros Compostos</a>
