@@ -4,8 +4,8 @@ import { useState } from "react";
 export default function LandingPage() {
   return (
     <div>
-      <div className="navbar border-b border-gray-300 bg-bray-200">
-        <div className="navbar-start ">
+      <div className="navbar border-b border-zinc-300  min-h-0 p-1 ">
+        <div className="navbar-start  ">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
@@ -27,12 +27,9 @@ export default function LandingPage() {
               tabIndex={0}
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <a>Item 1</a>
-              </li>
               <li tabIndex={0}>
                 <a className="justify-between">
-                  Parent
+                  Funcionalidades
                   <svg
                     className="fill-current"
                     xmlns="http://www.w3.org/2000/svg"
@@ -45,18 +42,20 @@ export default function LandingPage() {
                 </a>
                 <ul className="p-2">
                   <li>
-                    <a>Submenu 1</a>
+                    <a>Calculadora Dividendos</a>
                   </li>
                   <li>
-                    <a>Submenu 2</a>
+                    <a>Juros Compostos</a>
                   </li>
                 </ul>
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <a className="btn btn-ghost btn-sm normal-case text-xl px-0 py-0">
+            CalculatorApp
+          </a>
         </div>
-        <div className="navbar-center hidden lg:flex">
+        <div className=" btn-sm navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li tabIndex={0}>
               <a>
@@ -76,20 +75,20 @@ export default function LandingPage() {
                   <a>Calculadora Rendimento</a>
                 </li>
                 <li>
-                  <a>Outra Funcionalidade</a>
+                  <a>Juros Compostos</a>
                 </li>
               </ul>
             </li>
           </ul>
         </div>
-        <div className="navbar-start flex justify-end gap-3  ">
+        <div className="navbar-start flex justify-end px-2 gap-1">
           <button
             className=" 
-          btn btn-ghost btn-sm line bg-white outline-none  text-sm text-gray-500 normal-case"
+          btn btn-ghost btn-sm line  outline-none  text-sm normal-case"
           >
             Login
           </button>
-          <a className="btn btn-primary btn-sm text-white normal-case right-0 ">
+          <a className="btn btn-primary btn-sm text-white normal-case  ">
             Comece Já
           </a>
         </div>
