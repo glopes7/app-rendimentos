@@ -1,6 +1,6 @@
 import { Navigate, Route, Router } from "react-router-dom";
 import { useState } from "react";
- 
+
 export default function LandingPage() {
   return (
     <div>
@@ -82,15 +82,16 @@ export default function LandingPage() {
             </li>
           </ul>
         </div>
-        <div className="navbar-start flex justify-end ">
-          <a className="btn btn-ghost btn-sm text-gray-500 ">Sign in</a>
-          <a className="btn btn-primary btn-sm btn-outline ">Comece Já</a>
+        <div className="navbar-start flex justify-end gap-3  ">
+
+          <button className=" 
+          btn btn-ghost btn-sm line bg-white outline-none  text-sm text-gray-500 normal-case">Login</button>
+          <a className="btn btn-primary btn-sm text-white normal-case right-0 ">Comece Já</a>
         </div>
       </div>
-      <div className=" bg-base-200 text-[60px] flex justify-center">
-        <h1>Loppes Noticías</h1>
-      </div>
-      <p>Dividendos e JCP: Banco do Brasil (BBAS3) aprova “payout” de 40% para o exercício de 2023</p>
+
+
     </div>
+  );
   );
 }
