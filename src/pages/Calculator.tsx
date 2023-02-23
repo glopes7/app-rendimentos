@@ -9,6 +9,8 @@ const defaultQuote: Quote = {
   leftover: 0,
   numQuote: 0,
 };
+ 
+ 
 
 export default function Calculator() {
   const [numInputs, setNumInputs] = useState(0);
