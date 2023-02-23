@@ -10,8 +10,8 @@ export default function LandingPage() {
 
   return (
     <div>
-      <div className="navbar border-b border-zinc-300  min-h-0 p-1 ">
-        <div className="navbar-start  ">
+      <div className="navbar border-b border-zinc-200  min-h-max p-1 ">
+        <div className="navbar-start h-12">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
@@ -63,9 +63,14 @@ export default function LandingPage() {
               </li>
             </ul>
           </div>
-          <div>
-            <img  className=" px-[30px] w-[220px] " src="/src/images/logo-header.png" alt="logo-header" />
-          </div>
+
+          <a href="/" className="block">
+            <img
+              className=" ml-10 px-[20px] w-[220px] mr-auto"
+              src="/src/images/logo-header.png"
+              alt="logo-header"
+            />
+          </a>
         </div>
         <div className=" btn-sm navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
