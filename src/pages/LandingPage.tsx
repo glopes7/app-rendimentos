@@ -66,7 +66,7 @@ export default function LandingPage() {
 
           <a href="/" className="block">
             <img
-              className=" ml-10 w-auto h-8"
+              className=" h-auto w-40 ml-2 "
               src="/src/images/logo-header.png"
               alt="logo-header"
             />
