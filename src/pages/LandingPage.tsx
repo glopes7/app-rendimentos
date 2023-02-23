@@ -63,9 +63,9 @@ export default function LandingPage() {
               </li>
             </ul>
           </div>
-          <a className="btn btn-ghost btn-sm normal-case text-xl px-0 py-0">
-            CalculatorApp
-          </a>
+          <div>
+            <img  className=" px-[30px] w-[220px] " src="/src/images/logo-header.png" alt="logo-header" />
+          </div>
         </div>
         <div className=" btn-sm navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
