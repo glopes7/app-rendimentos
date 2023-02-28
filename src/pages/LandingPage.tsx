@@ -11,10 +11,11 @@ export default function LandingPage() {
   return (
     <div>
       <div className="navbar border-b border-zinc-200  min-h-max p-1 ">
+        
         <div className="navbar-start h-12">
           <a href="/" className="block">
             <img
-              className=" h-auto w-40 ml-2 "
+              className=" h-auto w-40 ml-4 "
               src="/images/logo-header.png"
               alt="logo-header"
             />
@@ -24,7 +25,7 @@ export default function LandingPage() {
             onClick={() => {
               setGoToCalculator(true);
             }}
-            className="btn-primary btn-xs btn text-white  flex ml-5 "
+            className="btn-primary btn-xs text-[9px] btn text-white  flex ml-5 mb-[-6px] "
           >
             Calculadora
           </button>
