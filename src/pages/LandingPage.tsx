@@ -31,12 +31,13 @@ export default function LandingPage() {
         </div>
 
         <div className="navbar-start flex justify-end px-2 gap-1">
-          <button className=" 
+          <button
+            className=" 
           btn btn-ghost btn-sm line  outline-none  text-sm normal-case"
           >
             Login
           </button>
-          
+
           <div className="dropdown ">
             <button
               tabIndex={0}
@@ -111,18 +112,7 @@ export default function LandingPage() {
                       </div>
                     </div>
                     <div className="pt-5 text-center text-gray-400 text-xs">
-                      <span>
-                        Copyright © 2021-2022
-                        <a
-                          href="https://codepen.io/uidesignhub"
-                          rel=""
-                          target="_blank"
-                          title="Ajimon"
-                          className="text-green hover:text-green-500 "
-                        >
-                          AJI
-                        </a>
-                      </span>
+                      <span>Copyright © 2021-2023</span>
                     </div>
                   </div>
                 </div>
