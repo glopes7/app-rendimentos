@@ -5,6 +5,7 @@ import { QuoteBox } from "./components/QuoteBox";
 import "/src/index.css";
 import Calculator from "./pages/Calculator";
 import LandingPage from "./pages/LandingPage";
+import LoginBox from "./pages/LoginBox";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,11 @@ const router = createBrowserRouter([
   {
     path: "/calculator",
     element: <Calculator />,
+  },
+
+  {
+    path: "/login",
+    element: <LoginBox />,
   },
 ]);
 
